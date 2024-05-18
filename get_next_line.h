@@ -31,8 +31,8 @@ void	*ft_calloc(size_t count, size_t size);
 /* new functions */
 char	*get_line_start(const char *str);
 char	*get_line_end(const char *str);
-void	read_line(int fd, char **storage, char **tempo);
-char	*process_current_line(char **storage, char **tempo);
+void	read_line(int fd, char **storage);
+char	*process_current_line(char **storage);
 void	ft_free_strs(char **str, char **str1, char **str2);
 char	*get_next_line(int fd);
 

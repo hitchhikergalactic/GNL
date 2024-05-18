@@ -65,9 +65,10 @@ char	*get_line_end(const char *str)
 	return (res_memory);
 }
 
-void	read_line(int fd, char **storage, char **tempo)
+void	read_line(int fd, char **storage)
 {
 	char	*mem_reserve;
+	char	*tempo;
 	long	readed;
 
 	mem_reserve = malloc(sizeof(char) * (BUFFER_SIZE + 1));
@@ -79,23 +80,18 @@ void	read_line(int fd, char **storage, char **tempo)
 		readed = read(fd, mem_reserve, BUFFER_SIZE);
 		if (readed < 0)
 		{
-			ft_free_strs(&mem_reserve, storage, tempo);
+			ft_free_strs(&mem_reserve, storage, NULL);
 			return ;
 		}
-
-
 		mem_reserve[readed] = '\0';
-		*tempo = ft_strdup(*storage);
-		ft_free_strs(storage, 0, 0);
-		*storage = ft_strjoin(*tempo, mem_reserve);
-		ft_free_strs(tempo, 0, 0);
-
-
-
+		tempo = *storage;
+		*storage = ft_strjoin(*storage, mem_reserve);
+		free (tempo);
 		if (ft_strchr(*storage, '\n'))
 			break ;
 	}
-	ft_free_strs(&mem_reserve, 0, 0);
+	free (mem_reserve);
+	// ft_free_strs(&mem_reserve, 0, 0);
 }
 
 // char	*process_current_line(char **storage, char **tempo)
@@ -132,7 +128,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = NULL;
 	tempo = NULL;
-	read_line(fd, &storage, &tempo);
+	read_line(fd, &storage);
 	if (storage != NULL && *storage != '\0')
 		line = process_current_line(&storage);
 	if (!line || *line == '\0')
