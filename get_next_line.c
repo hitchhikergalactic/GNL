@@ -82,26 +82,43 @@ void	read_line(int fd, char **storage, char **tempo)
 			ft_free_strs(&mem_reserve, storage, tempo);
 			return ;
 		}
+
+
 		mem_reserve[readed] = '\0';
 		*tempo = ft_strdup(*storage);
 		ft_free_strs(storage, 0, 0);
 		*storage = ft_strjoin(*tempo, mem_reserve);
 		ft_free_strs(tempo, 0, 0);
+
+
+
 		if (ft_strchr(*storage, '\n'))
 			break ;
 	}
 	ft_free_strs(&mem_reserve, 0, 0);
 }
 
-char	*process_current_line(char **storage, char **tempo)
+// char	*process_current_line(char **storage, char **tempo)
+// {
+// 	char	*line;
+
+// 	*tempo = ft_strdup(*storage);
+// 	ft_free_strs(storage, 0, 0);
+// 	*storage = get_line_end(*tempo);
+// 	line = get_line_start(*tempo);
+// 	ft_free_strs(tempo, 0, 0);
+// 	return (line);
+// }
+
+char	*process_current_line(char **storage)
 {
 	char	*line;
+	char	*tempo;
 
-	*tempo = ft_strdup(*storage);
-	ft_free_strs(storage, 0, 0);
-	*storage = get_line_end(*tempo);
-	line = get_line_start(*tempo);
-	ft_free_strs(tempo, 0, 0);
+	line = get_line_start(*storage);
+	tempo = *storage;
+	*storage = get_line_end(*storage);
+	free (tempo);
 	return (line);
 }
 
@@ -117,7 +134,7 @@ char	*get_next_line(int fd)
 	tempo = NULL;
 	read_line(fd, &storage, &tempo);
 	if (storage != NULL && *storage != '\0')
-		line = process_current_line(&storage, &tempo);
+		line = process_current_line(&storage);
 	if (!line || *line == '\0')
 	{
 		ft_free_strs(&storage, &line, &tempo);
