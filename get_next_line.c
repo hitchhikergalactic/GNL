@@ -6,7 +6,7 @@
 /*   By: osredond <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 18:34:58 by osredond          #+#    #+#             */
-/*   Updated: 2024/05/18 15:30:29 by osredond         ###   ########.fr       */
+/*   Updated: 2024/05/18 22:05:02 by osredond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,20 +91,7 @@ void	read_line(int fd, char **storage)
 			break ;
 	}
 	free (mem_reserve);
-	// ft_free_strs(&mem_reserve, 0, 0);
 }
-
-// char	*process_current_line(char **storage, char **tempo)
-// {
-// 	char	*line;
-
-// 	*tempo = ft_strdup(*storage);
-// 	ft_free_strs(storage, 0, 0);
-// 	*storage = get_line_end(*tempo);
-// 	line = get_line_start(*tempo);
-// 	ft_free_strs(tempo, 0, 0);
-// 	return (line);
-// }
 
 char	*process_current_line(char **storage)
 {

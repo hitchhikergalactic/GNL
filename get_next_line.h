@@ -6,21 +6,22 @@
 /*   By: osredond <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 18:36:07 by osredond          #+#    #+#             */
-/*   Updated: 2024/05/17 18:26:07 by osredond         ###   ########.fr       */
+/*   Updated: 2024/05/18 22:29:32 by osredond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <stdlib.h>	/* Malloc & Free functions */
-# include <unistd.h> 	/* Write & Read functions */
-# include <stdio.h>		/* BUFSIZ definition*/
-# include <fcntl.h> 	/* Open function */
-# include <limits.h>	/* Macro defined OPEN_MAX */
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <limits.h>
+# include <stdint.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4
+#  define BUFFER_SIZE 1
 # endif
 
 /* libft functions */

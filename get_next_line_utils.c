@@ -6,12 +6,11 @@
 /*   By: osredond <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 18:36:58 by osredond          #+#    #+#             */
-/*   Updated: 2024/05/02 18:51:34 by osredond         ###   ########.fr       */
+/*   Updated: 2024/05/18 22:23:43 by osredond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdint.h>
 
 char	*ft_strchr(const char *str, int c)
 {
@@ -25,32 +24,6 @@ char	*ft_strchr(const char *str, int c)
 		return ((char *)str);
 	return (0);
 }
-
-// char	*ft_strjoin(const char *s1, const char *s2)
-// {
-// 	char	*s;
-// 	int		len_s1;
-// 	int		len_s2;
-
-// 	len_s1 = 0;
-// 	if (!s1 && !s2)
-// 		return (NULL);
-// 	while (s1 && s1[len_s1])
-// 		len_s1++;
-// 	len_s2 = 0;
-// 	while (s2 && s2[len_s2])
-// 		len_s2++;
-// 	s = ft_calloc(len_s1 + len_s2 + 1, sizeof * s);
-// 	if (!s)
-// 		return (NULL);
-// 	len_s1 = -1;
-// 	while (s1 && s1[++len_s1])
-// 		s[len_s1] = s1[len_s1];
-// 	len_s2 = -1;
-// 	while (s2 && s2[++len_s2])
-// 		s[len_s1 + len_s2] = s2[len_s2];
-// 	return (s);
-// }
 
 size_t	ft_strlen(const char *s)
 {
