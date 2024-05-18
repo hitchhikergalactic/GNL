@@ -6,7 +6,7 @@
 /*   By: osredond <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 18:36:07 by osredond          #+#    #+#             */
-/*   Updated: 2024/05/18 22:29:32 by osredond         ###   ########.fr       */
+/*   Updated: 2024/05/18 23:11:45 by osredond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 /* libft functions */
 char	*ft_strjoin(const char *s1, const char *s2);
-char	*ft_strdup(const char *s1);
+size_t	ft_strlen(const char *s)
 char	*ft_strchr(const char *str, int c);
 void	*ft_calloc(size_t count, size_t size);
 /* new functions */
