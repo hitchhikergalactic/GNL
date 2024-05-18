@@ -121,19 +121,17 @@ char	*process_current_line(char **storage)
 char	*get_next_line(int fd)
 {
 	static char	*storage;
-	char		*tempo;
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE < 0)
 		return (NULL);
 	line = NULL;
-	tempo = NULL;
 	read_line(fd, &storage);
 	if (storage != NULL && *storage != '\0')
 		line = process_current_line(&storage);
 	if (!line || *line == '\0')
 	{
-		ft_free_strs(&storage, &line, &tempo);
+		ft_free_strs(&storage, &line, NULL);
 		return (NULL);
 	}
 	return (line);
