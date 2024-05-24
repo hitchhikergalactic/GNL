@@ -6,7 +6,7 @@
 /*   By: osredond <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 18:34:58 by osredond          #+#    #+#             */
-/*   Updated: 2024/05/18 22:05:02 by osredond         ###   ########.fr       */
+/*   Updated: 2024/05/20 17:39:30 by osredond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,28 +123,3 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-/*
-#include <stddef.h>
-#include <stdio.h>
-#include <fcntl.h>
-
-int	main(void)
-{
-	int		fd;
-	char	*line;
-	
-
-	fd = 0;
-	if (fd == -1)
-		return (-1);
-	fd = open("test1.txt", O_RDONLY);
-	line = "";
-	while (line != NULL)
-	{
-		line = get_next_line(fd);
-		printf("%s", line);
-		free(line);
-	}
-	fd = close(fd);
-	return (0);
-}*/
