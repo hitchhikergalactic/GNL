@@ -1,8 +1,3 @@
-=====================================================================================
-# :scroll: GUIA DE PROYECTOS REALIZADOS EN LA ESCUELA 42 NETWORK
-
-=====================================================================================
-
 ## 📔 NORMALIZACIÓN
 Para llegar a ser un buen desarrollador no sólo debemos saber escribir **buen código**, sino que también debemos aprender a que nuestro código sea **lo más legible** posible para otros programadores. Es por ello que en 42, usamos nuestra propia `NORMA (norm)` a la hora de empezar un nuevo proyecto. Puedes echarle un vistazo aqui: <a href="https://github.com/suker/42-Cadet/blob/master/en.normv3.pdf">NORMA</a>
 
